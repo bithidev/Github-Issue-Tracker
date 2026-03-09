@@ -36,7 +36,7 @@ let card = `
 <div onclick="openModal(${issue.id})"
 class="bg-white p-4 rounded-lg shadow border-t-4 ${borderColor} cursor-pointer">
 
-<p class="rounded-full bg-[#FEECEC] "> ${issue.priority}</p>
+<p class="rounded-full bg-[#FEECEC] p-2 inline "> ${issue.priority}</p>
 <h3 class="font-bold text-lg">${issue.title}</h3>
 
 <p class="text-sm text-gray-600 mb-2">
