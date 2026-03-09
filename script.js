@@ -27,15 +27,16 @@ container.innerHTML = "";
 list.forEach(issue => {
 
 let borderColor =
+ 
 issue.status === "open"
-? "border-green-500"
+? "border-green-500 "
 : "border-purple-500";
 
 let card = `
 <div onclick="openModal(${issue.id})"
 class="bg-white p-4 rounded-lg shadow border-t-4 ${borderColor} cursor-pointer">
 
-<p class="rounded-full bg-[#FEECEC] w-30"> ${issue.priority}</p>
+<p class="rounded-full bg-[#FEECEC] "> ${issue.priority}</p>
 <h3 class="font-bold text-lg">${issue.title}</h3>
 
 <p class="text-sm text-gray-600 mb-2">
@@ -46,7 +47,11 @@ ${issue.description.slice(0,80)}...
 <p>Category: ${issue.category}</p>
 <p>Author: ${issue.author}</p>
 <button>${issue.label}</button>
-<p class="text-xs text-gray-400">${issue.createdAt}</p>
+<hr class="border-0 border-t divide-solid border-gray-200 my-4">
+<div><p class="text-xs text-gray-400"> ${issue.createdAt}</p>
+<p class="text-xs text-gray-400 pt-2"> ${issue.updatedAt}</p>
+
+</div>
 
 </div>
 `;
