@@ -195,7 +195,6 @@ let card = `
       <span class="bg-amber-50 text-[#D97706] border border-[#b19f8a] text-sm px-3 py-1 rounded-full">
         ${label}
       </span>
-      git add
     `).join('')}
   </div>
 
