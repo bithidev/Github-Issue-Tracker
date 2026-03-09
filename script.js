@@ -35,6 +35,7 @@ let card = `
 <div onclick="openModal(${issue.id})"
 class="bg-white p-4 rounded-lg shadow border-t-4 ${borderColor} cursor-pointer">
 
+<p class="rounded-full bg-[#FEECEC] w-30"> ${issue.priority}</p>
 <h3 class="font-bold text-lg">${issue.title}</h3>
 
 <p class="text-sm text-gray-600 mb-2">
@@ -44,8 +45,7 @@ ${issue.description.slice(0,80)}...
 <p>Status: ${issue.status}</p>
 <p>Category: ${issue.category}</p>
 <p>Author: ${issue.author}</p>
-<p>Priority: ${issue.priority}</p>
-<p>Label: ${issue.label}</p>
+<button>${issue.label}</button>
 <p class="text-xs text-gray-400">${issue.createdAt}</p>
 
 </div>
