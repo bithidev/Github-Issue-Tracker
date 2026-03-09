@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Issue Tracker</title>
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ <style>
+    *{
+       font-family: "Geist", sans-serif;
+    }
+   </style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+
+<div class="bg-white shadow p-4 flex justify-between px-20">
+
+<div class="flex gap-4 text-center">
+<img src="images/github-logo.png" class="w-9" alt="">  
+<h1 class="text-xl font-bold pt-1">GitHub Issues Tracker</h1>
+</div>  
+
+<div class="">
+<input id="searchInput" type="text"
+placeholder="Search issue..."
+class="border border-[#E4E4E7] p-2 rounded">
+
+<button onclick="searchIssue()"
+class="bg-[#4A00FF] text-white px-3 py-2 rounded ml-4">
++ New Issue
+</button>
+</div>
+
+</div>
+
+<!-- Tabs -->
+
+<div class="flex gap-4 m-6 p-6 rounded-b-lg container mx-auto bg-white">
+
+<button id="tab-all"
+onclick="filterIssues('all')"
+class="tab-btn px-4 py-2 rounded border cursor-pointer hover:bg-[#4A00FF] hover:text-white" >
+All
+</button>
+
+<button id="tab-open"
+onclick="filterIssues('open')"
+class="tab-btn px-4 py-2 rounded border cursor-pointer hover:bg-[#4A00FF] hover:text-white">
+Open
+</button>
+
+<button id="tab-closed"
+onclick="filterIssues('closed')"
+class="tab-btn px-4 py-2 rounded border cursor-pointer hover:bg-[#4A00FF] hover:text-white">
+Closed
+</button>
+
+</div>
+<!--Issues-->
+<!-- <div>
+   <div>
+      <div><img src="images/Aperture.png" alt=""></div>
+      <div>
+         <h3>0 Issues</h3>
+         <p>Track and manage your project issues</p>
+      </div>
+   </div>
+   <div></div>
+</div> -->
+<!--Issues Header-->
+<!-- Issues Header -->
+<div class="flex items-center gap-3 m-6">
+
+<div>
+<img src="images/Aperture.png" alt="">
+</div>
+
+<div>
+<h3 id="issue-count">0 Issues</h3>
+<p>Track and manage your project issues</p>
+</div>
+
+</div>
+
+<!-- Issues List -->
+<div id="issues-container"></div>
+
+
+<!-- Loading -->
+
+<div id="loader" class="text-center hidden">
+Loading...
+</div>
+
+<!-- Issue Container -->
+
+<div id="issueContainer"
+class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 container mx-auto bg-[#FBFBFB]">
+</div>
+
+
+<!-- Modal -->
+
+<div id="modal"
+class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+
+<div class="bg-white p-6 rounded w-96">
+
+<h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
+
+<p id="modalDesc" class="mb-2"></p>
+
+<p id="modalAuthor"></p>
+
+<p id="modalCategory"></p>
+
+<p id="modalPriority"></p>
+
+<p id="modalCreated"></p>
+
+<button onclick="closeModal()"
+class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

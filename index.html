@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Issue Tracker Login</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    *{
+       font-family: "Geist", sans-serif;
+    }
+   </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+<div class="bg-white p-8 rounded shadow w-96 text-center">
+
+<img src="images/github-logo.png" alt="" class="inline mb-6">    
+<h1 class="text-[24px] font-semibold mb-2 pt-1">GitHub Issues Tracker</h1>
+<p class="text-gray-500 mb-6">Sign in to manage your issues</p>
+
+<label for="" class="block text-left text-[#1F2937] mb-2 font-medium">Username</label>
+<input id="username" type="text" placeholder="Enter Username"
+class="border w-full p-2 mb-3 rounded">
+
+<label for="" class="block text-left text-[#1F2937] mb-2 font-medium mt-3">Password</label>
+<input id="password" type="password" placeholder="Enter Password"
+class="border w-full p-2 mb-4 rounded">
+
+<button onclick="login()"
+class="bg-[#4A00FF] text-white w-full py-4 rounded mt-6 font-medium">
+Sign In
+</button>
+
+<p class="py-5">OR</p>
+<p class="text-[#64748B]">Demo Credentials:</p>
+<div class="bg-[#F8FAFC] p-6">
+<p><span class="font-semibold text-[#1F2937]">Username:</span> admin</p>
+<p><span class="font-semibold text-[#1F2937]">Password:</span> admin123</p>
+</div>
+
+</div>
+
+<script>
+function login(){
+
+let user = document.getElementById("username").value;
+let pass = document.getElementById("password").value;
+
+if(user === "admin" && pass === "admin123"){
+    localStorage.setItem("login", true);
+    window.location.href = "dashboard.html";
+}
+else{
+    alert("Invalid credentials");
+}
+
+}
+</script>
+
+</body>
+</html>
