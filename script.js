@@ -149,30 +149,65 @@ issue.priority === "high"
 
 
 
+// let card = `
+//  <div onclick="openModal(${issue.id})"
+//  class="bg-white p-4 rounded-lg shadow border-t-4 ${borderColor} cursor-pointer">
+
+//  <span class="text-xs font-medium px-4 py-2 rounded-full ${priorityStyle}">
+//  ${issue.priority}
+//  </span>
+//  <h3 class="font-bold text-lg mt-4">${issue.title}</h3>
+//  <button class=" bg-amber-50 text-lg mt-4">${issue.labels}</button>
+
+
+ 
+//  <p class="text-sm text-gray-600 my-3">
+//  ${issue.description.slice(0,80)}...
+//  </p>
+
+
+//  <hr class="border-0 border-t divide-solid border-gray-200 my-4">
+//  <p class="text-[16px] text-gray-400">${issue.author}</p>
+//  <div><p class="text-xs text-gray-400"> ${issue.createdAt}</p>
+
+//  </div>
+
+//  </div>
+//  `;
+
 let card = `
- <div onclick="openModal(${issue.id})"
- class="bg-white p-4 rounded-lg shadow border-t-4 ${borderColor} cursor-pointer">
+<div onclick="openModal(${issue.id})"
+     class="bg-white p-4 rounded-lg shadow border-t-4 ${borderColor} cursor-pointer">
 
- <span class="text-xs font-medium px-4 py-2 rounded-full ${priorityStyle}">
- ${issue.priority}
- </span>
- <h3 class="font-bold text-lg mt-4">${issue.title}</h3>
+  <span class="text-xs font-medium px-4 py-2 rounded-full ${priorityStyle}">
+    ${issue.priority}
+  </span>
 
- <p class="text-sm text-gray-600 my-3">
- ${issue.description.slice(0,80)}...
- </p>
+  <h3 class="font-bold text-lg mt-4">${issue.title}</h3>
 
+  <p class="text-sm text-[#64748B] my-3">
+    ${issue.description.slice(0, 80)}...
+  </p>
 
- <hr class="border-0 border-t divide-solid border-gray-200 my-4">
- <p class="text-[16px] text-gray-400">${issue.author}</p>
- <div><p class="text-xs text-gray-400"> ${issue.createdAt}</p>
+<!-- Labels Section -->
+  <div class="flex flex-wrap gap-2 mt-2">
+    ${issue.labels.map(label => `
+      <span class="bg-amber-50 text-[#D97706] border border-[#b19f8a] text-sm px-3 py-1 rounded-full">
+        ${label}
+      </span>
+      git add
+    `).join('')}
+  </div>
 
- </div>
+  <hr class="border-0 border-t divide-solid border-gray-200 my-4">
 
- </div>
- `;
+  <p class="text-[16px] text-gray-400">${issue.author}</p>
+  <div>
+    <p class="text-xs text-gray-400">${issue.createdAt}</p>
+  </div>
 
-
+</div>
+`;
 
 
 
